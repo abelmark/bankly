@@ -10,40 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-*/
-@import "bootstrap-sprockets";
+
+ *
+ *= require_self
+ *= require jquery-ui
+ *= require jquery-ui.structure
+ *= require jquery-ui.theme
+ *= require_tree .
+ */
+
 @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "main";
+@import "sessions";
+@import "users";
 
-
-$btn-default-color: #21CE99 !default;
-$btn-default-bg: #21CE99 !default;
-$body-bg: #21CE99 !default;
-
-/*h1 {
-			font-family: "Paytone one";
-			color: #21CE99;
-}*/
-
-.main {
-	margin-top: 110px;
-}
-
-.log{
-	line-height: 45px;
-}
-
-.btn-xlarge {
-	display:inline-block;
-    padding: 18px 28px;
-    font-size: 22px;
-    line-height: normal;
-    -webkit-border-radius: 8px;
-       -moz-border-radius: 8px;
-            border-radius: 8px;
-    }
-
-.title{
-	font-size: 100px;
-	margin-bottom: -22px;
-	border-bottom: 2px solid #21CE99;
-}

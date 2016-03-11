@@ -1,3 +1,54 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main {
+	h1 {
+		font-size: 100px;
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	p {
+		margin-left: 45%;
+		margin-top: 30px;
+	}
+	#login {
+		margin-left: 48%;
+		margin-top: 30px;
+	}
+	#profiles {
+		margin-left: 90px;
+		.profile {
+			vertical-align: top;
+	    	display: inline-block;
+	    	width: 300px;
+	    	margin: 0;
+			.profilepic {
+				height: 250px;
+				width: 250px;
+				border-radius: 50%;
+				background-size: cover;
+				background-position-x: -35px;
+				display: inline-block;
+				margin-top: 50px;
+			}
+			p {
+	    		margin: 0;
+	    		padding: 30px;
+    		}
+    		#mark {
+				background-image: url("/assets/Mark_Abel.jpg");
+			}
+			#audrey {
+				background-image: url("/assets/Audrey_Andoy.jpg");
+			}
+			#evan {
+				background-image: url("/assets/Evan_Wilkinson.jpg");
+			}
+			#alexa {
+				background-image: url("/assets/Alexa_Heitzenrader.jpg");
+			}
+		}
+	}
+}

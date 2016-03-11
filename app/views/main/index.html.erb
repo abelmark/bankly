@@ -1,19 +1,45 @@
-<div class = 'container'>
-	<div class = 'row center'>
-		<div class = 'col-sm-8 col-sm-offset-2'>
-			<div class = 'top text-center'>
-				<h1 class='title'><span class='title'>BANKLY</span></h1>
-				<h2><span class='slogan'>Visualize Your Spending</span></h2>
-				<a href='/login' class='btn-xlarge btn-primary'>Log in</a>
-				<p>Not a user? <%= link_to "Sign up", users_path %></p>
+<div class="main">
+	<div id="fullpage">
+	<div class="section">
+		<h1>Bankly</h1>
+		<p>Visualize Your Spending</p>
+		<% if !@user %>
+		<%= link_to "Login", login_path, class: "btn btn-primary", id: "login" %>
+			<br />
+		<p>New to the site? <%= link_to "Sign up", users_path, id: "sign_up" %></p>
+			
+		<% end %>
+
+		<% if @user %>
+			<p>Logged in as <%= @user.name %></p>
+			<%= link_to "Logout", logout_path %>
+			<%= link_to "Add Item", line_items_path %>
+		<% end %>
+	</div>
+	<div class="section">
+		<h1>About</h1>
+		<div id="profiles">
+			<div class="profile">
+				<div class="profilepic" id="mark"></div>
+				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="profile">
+				<div class="profilepic" id="audrey"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+			<div class="profile">
+				<div class="profilepic" id="evan"></div>
+				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+			<div class="profile">
+				<div class="profilepic" id="alexa"></div>
+				<p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 			</div>
 		</div>
 	</div>
+	</div>
 </div>
-
-
-<!-- <svg width="720" height="120">
-  <circle cx="40" cy="60" r="10"></circle>
-  <circle cx="80" cy="60" r="10"></circle>
-  <circle cx="120" cy="60" r="10"></circle>
-</svg> -->

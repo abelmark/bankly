@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  	<script src="//code.jquery.com/jquery.js"></script>
+  	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <title>Bankly</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -8,30 +11,11 @@
   <link href='https://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-		<a class="navbar-brand" href="#">Bankly</a>
-		<ul class="nav navbar-nav navbar-left">
-			<li class="active">
-				<a href="#">Home</a>
-			</li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right log">
-			<li class="active">
-				<% if @user %>
-				<li>Logged in as <%= @user.name %></li>
-				<% end %>
-			</li>
-		</ul>
+	<div class='container main'>
+		<%= render "layouts/flash" %>
+		<div class='row text-center'>
+	<%= yield %>
+		</div>
 	</div>
-</nav>
-
-
-<div class='container main'>
-	<%= render "layouts/flash" %>
-	<div class='row text-center'>
-<%= yield %>
-	</div>
-</div>
 </body>
 </html>
