@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'users/show'
 
   root 'main#index'
-
+  get 'dashboard' => 'main#dashboard', as: :dashboard
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

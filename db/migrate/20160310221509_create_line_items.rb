@@ -6,7 +6,7 @@ class CreateLineItems < ActiveRecord::Migration
       t.text :description
       t.date :date
       t.references :user, index: true, foreign_key: true
-
+      t.references :category, index: true, foreign_key: true
       t.timestamps null: false
     end
   end
