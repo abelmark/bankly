@@ -14,7 +14,6 @@
 </thead>
 <tbody>
     <% total = 0 %>
-    <% id = 0 %>
     <% @current_user.line_item.each do |item| %>
       <tr class="rData" >
         <td> <%= item.date %>  </td>
@@ -50,7 +49,6 @@
       </div>
     </div>
   </div>
-      <% id = id+1 %>
     <% end %>
 </tbody>
 <tfoot>
@@ -63,6 +61,6 @@
     <td> <h3><%= number_to_currency(total) %></h3> </td>
 </tfoot>
 </table>
-<a href='#modal-id3' data-toggle="modal" href="line_items_edit_path(item)" class="btn btn-xlarge btn-primary">Add item</a>
+<button class = 'btn btn-primary' href='#modal-add' data-toggle="modal" id='additem'>Add Item</button>
 
 

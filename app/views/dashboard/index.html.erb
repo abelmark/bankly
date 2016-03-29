@@ -10,7 +10,7 @@
 			<canvas id="myChart" class="chart responsive text-center" width="400" height="400"></canvas>
 		</div>
 		<br>
-		<button class = 'btn btn-primary' href='#modal-id3' data-toggle="modal" id='additem'>Add Item</button>
+		<button class = 'btn btn-primary' href='#modal-add' data-toggle="modal" id='additem'>Add Item</button>
 		<button class="btn btn-primary" data-toggle="modal" href='#modal-id'>View all</button>
 	</div>
 
@@ -52,8 +52,7 @@
 								</tr>
 							<% end %>
 									<td>Total Expenses</td>
-									<td><%= number_to_currency(@total_expenses) %> </td>
-								
+									<td><%= number_to_currency(@total_expenses) %> </td>						
 						</div>
 					</table>
 				</div>
@@ -75,20 +74,15 @@
 					
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 		
-		<div class="row">
-		<div class="budget">
-			<div class="col-sm-8 col-sm-offset-2 text-center">
-
-			<ul class="graphs stats-container centered biggie">			
-	       
-	       <div class="animated" 
+	<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">	       
+	       <div class="animated"
 	       			data-provide="circular" 
 	       			data-fill-color="#21CE99"
 	       			data-percent="true" 
@@ -107,22 +101,25 @@
 	       										<% end %>" 
 	          	data-title="SUNY Buffalo" data-dates="2005 - 2010" style="width: 272px; height: 272px;">
 	       </div>  
+				</div>
+		</div>
+
 	                
-			</ul>
-	
-				<p><h1>Your monthly budget is <%= number_to_currency(current_user.budget) %></h1></p>
+<div class='row'>
+	<div class= 'col-sm-8 col-sm-offset-2 text-center'>
+		<h1>Your monthly budget is <%= number_to_currency(current_user.budget) %></h1>
 				<!-- <p>		Budget to expense ratio: <%= current_user.budget.to_f /  @total_expenses.to_f %>
 				</p> -->
 
-				<p> <h3> AND </h3></p>
+				<h3> AND </h3>
 				
 					<% if current_user.budget > @total_expenses %>
-								<p><h2> There is <%= number_to_currency(@budget.to_f - @total_expenses.to_f) %> left in your budget</h2></p>
+								<h2> There is <%= number_to_currency(@budget.to_f - @total_expenses.to_f) %> left in your budget</h2>
 						<% elsif %>
-							   <p><h2>You are OVER budget by <%= number_to_currency(@total_expenses.to_f - @budget.to_f) %></h2></p>
+							   <h2>You are OVER budget by <%= number_to_currency(@total_expenses.to_f - @budget.to_f) %></h2>
 						<%else%>
-								 <p><h2>Please edit your budget</h2></p>
+								 <h2>Please edit your budget</h2>
 					<% end %>
 				</div>
 			</div>
-		</div>
+

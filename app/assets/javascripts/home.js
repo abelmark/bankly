@@ -29,7 +29,7 @@ $(document).ready(function() {
     	function(evt){
     	$.get("/items", function(data){
     		$('.modal-body-add-item').html(data);
-    		$('#modal-id3').modal();
+    		$('#modal-add').modal();
     	});
     	}
     )  
